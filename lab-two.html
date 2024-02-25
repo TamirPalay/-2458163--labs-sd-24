@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>lab-two</title>
+  <style>
+  body{
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      height: 30px;
+    }
+
+    .welcome-message,
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    nav ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+    footer{
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      height: 30px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      margin-top: 80px;
+    }
+    img{
+        width: 600px;
+        height: 400px;
+        padding: 15px;
+        padding-top: 1px;
+    }
+    h1{
+        text-align: center;
+        padding-top: 40px;
+
+    }
+    h2{
+        padding-top: 5px;
+        padding-bottom: 0%;
+    }
+    .About{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .Services {
+     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 500px;
+}
+p{
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+.WebDev , .GraphicDes{
+
+    background-color: white;
+    border-style: solid;
+    border-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+
+}
+
+  </style>
+</head>
+
+
+<body>
+  <header>
+    <p class="welcome-message">Welcome to Software Design Website</p>
+    <nav>
+      <ul>
+        <li><a href="#About-section">About Us</a></li>
+        <li><a href="#Services-section">Services</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+<section class="About">
+    <h1 id="About-section">About Us</h1>
+    <p>We are a company dedicated to providing excellent services to our customers.</p>
+    <img class="img1" src="lab2/Lab2Images/customer-satisfaction.webp">
+</section>
+<h1 id="Services-section">Our Services</h1>
+<section class="Services">
+<section class="WebDev">
+    <h2>Web Development</h2>
+    <p>We specialize in creating responsive and user-friendly websites</p>
+    <img src="lab2/Lab2Images/WebDev.jpeg" alt="Web Development">
+</section>
+<section class="GraphicDes">
+    <h2>Graphic Design</h2>
+    <p>Our talented designers can bring your ideas to life with stunning visuals</p>
+    <img src="lab2/Lab2Images/graphicDes.jpeg" alt="Graphic Design">
+</section>
+
+</section>
+    
+
+  <footer> &#169 2024 The Palay Company. All rights reserved </footer>
+</body>
+</html>

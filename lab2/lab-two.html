@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>lab-two</title>
+  <style>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      height: 30px;
+    }
+
+    .welcome-message,
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    nav ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+    footer{
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      height: 30px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <header>
+    <p class="welcome-message">Welcome to Software Design Website</p>
+    <nav>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+<section class="About">
+    <h1>About Us</h1>
+    <p>We are a company dedicated to providing excellent services to our customers.</p>
+    <img class="img1">
+</section>
+  <footer> &#169 2024 The Palay Company. All rights reserved </footer>
+</body>
+</html>
