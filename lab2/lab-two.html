@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>lab-two</title>
+  <script></script>
   <style>
   body{
     display: flex;
@@ -58,8 +59,6 @@
     img{
         width: 600px;
         height: 400px;
-        padding: 15px;
-        padding-top: 1px;
         padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 15px;
@@ -75,8 +74,6 @@
 
     }
     h2{
-        padding-top: 5px;
-        padding-bottom: 0%;
         margin-bottom: 0px;
        
     }
@@ -97,20 +94,15 @@
     padding-bottom: 500px;
 }
 p{
-    padding-top: 10px;
-    padding-bottom: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 .WebDev , .GraphicDes{
-
    
-    background-color: white;
     border-style: solid;
     border-color: gray;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
    justify-content: center;
     align-items: center;
     margin: 0;
@@ -124,6 +116,7 @@ p{
 
 <body>
   <header>
+    <!--should have been h1-->
     <p class="welcome-message">Welcome to Software Design Website</p>
     <nav>
       <ul>
@@ -134,25 +127,22 @@ p{
     </nav>
   </header>
 <section class="About">
-    <h1 id="About-section">About Us</h1>
+    <h1 id="About-section">About Us</h1> <!--should have been h2-->
     <p>We are a company dedicated to providing excellent services to our customers.</p>
     <img class="img1" src="Lab2Images/customer-satisfaction.webp">
 </section>
 <h1 id="Services-section">Our Services</h1>
 <section class="Services">
-<section class="WebDev">
-<figure class="WebDev">
+  <!--could use article because these elements would make sense independently-->
+<figure class="WebDev"><!--figures always have captions-->
     <h2>Web Development</h2>
     <p>We specialize in creating responsive and user-friendly websites</p>
     <img src="Lab2Images/WebDev.jpeg" alt="Web Development">
-</section>
-<section class="GraphicDes">
 </figure>
 <figure class="GraphicDes">
     <h2>Graphic Design</h2>
     <p>Our talented designers can bring your ideas to life with stunning visuals</p>
     <img src="Lab2Images/graphicDes.jpeg" alt="Graphic Design">
-</section>
 </sfigure>
 
 </section>
