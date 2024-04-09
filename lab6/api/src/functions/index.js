@@ -1,5 +1,6 @@
 //create cars api using express
 const express = require('express');
+const {app}=require('@azure/functions');
 const app = express();
 
 
@@ -7,7 +8,42 @@ const app = express();
 app.use(express.json());
 
 const cars = require('./cars.json');
+const fs = require('fs');
+ app.http('cars',{
+    methods:['GET'],
+    authlevel:'anonymous',
+    handler: async (context,req)=>{
+        return{
+            status:200,
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(cars)
+            }
+        }
+ });
 
+ app.http('addCar',{
+    methods:['POST'],
+    authlevel:'anonymous',
+    handler: async (context,req)=>{
+         newCar = await req.json();
+        // Read the cars.json file
+        const carData = fs.readFileSync('./cars.json');
+        const cars = JSON.parse(carData);
+
+        // Add the new car to the array
+        cars.push(newCar);
+
+        // Write the updated array back to the cars.json file
+        fs.writeFileSync('./cars.json', JSON.stringify(cars));
+
+        return{
+            status:200,
+            body:"new car added"
+            }
+        }
+ });
 //get all cars
 app.get('/cars', (req, res) => {
     res.json(cars);
