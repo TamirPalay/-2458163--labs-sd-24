@@ -1,24 +1,17 @@
-const { app } = require('@azure/functions');
+// addCar.js
+module.exports = async function (context, req) {
+    const fs = require('fs');
+    const newCar = req.body;
 
-app.http('addCar', {
-    methods: ['POST'],
-    authLevel: 'anonymous',
-    handler: async (request, context) => {
-       newCar = await req.json();
-        // Read the cars.json file
-        const carData = fs.readFileSync('./cars.json');
-        const cars = JSON.parse(carData);
+    const carData = fs.readFileSync('./cars.json');
+    const cars = JSON.parse(carData);
 
-        // Add the new car to the array
-        cars.push(newCar);
+    cars.push(newCar);
 
-        // Write the updated array back to the cars.json file
-        fs.writeFileSync('./cars.json', JSON.stringify(cars));
+    fs.writeFileSync('./cars.json', JSON.stringify(cars));
 
-        return{
-            status:200,
-            body:"new car added"
-            }
-    }
-});
-
+    context.res = {
+        status: 200,
+        body: "new car added"
+    };
+}

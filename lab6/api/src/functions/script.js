@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carList = document.getElementById('carList');
     let cars = [];
     loadCarsBtn.addEventListener('click', () => {
-        fetch('/api/cars')
+        fetch('/api/src/functions/getAllCars.js')
             .then(response => response.json())
             .then(data => {
                 cars = data;
@@ -25,45 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => {
                 console.error('Error fetching car data:', error);
             });
-    });
-});
-function addCar(newCar) {
-    fetch('/api/cars', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newCar)
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            cars.push(data); // Add the new car to the local array
-            loadCarsBtn.click(); // Reload cars
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-}
-
-carForm.addEventListener('submit', event => {
-    event.preventDefault();
-    const make = document.getElementById('make').value;
-    const model = document.getElementById('model').value;
-    const year = document.getElementById('year').value;
-    const price = document.getElementById('price').value;
-    addCar({ make, model, year, price });
-    carForm.reset();
-});
-
-// Function to remove a car
-function removeCar(index) {
-    const carId = cars[index].id;
-    fetch(`/api/cars/{carId}`, {
-        method: 'DELETE'
-    })
-        .then(response => response.json())
-        .then(data => {
             console.log('Success:', data);
             //reload cars
             // const loadCarsBtn = document.getElementById('loadCarsBtn');
@@ -72,11 +33,5 @@ function removeCar(index) {
         .catch(error => {
             console.error('Error:', error);
         });
-}
-// Event delegation for remove buttons
-carList.addEventListener('click', event => {
-    if (event.target.classList.contains('btn-remove')) {
-        const index = event.target.dataset.index;
-        removeCar(index);
-    }
-});
+    });
+
